@@ -1,7 +1,7 @@
 ﻿
 namespace Interface_logica_pagar;
 
-internal class Produto
+internal class Produto : IPagavel
 {
     public Produto(string nomeDoProduto, int quantidadeDoProduto, int valorDoProduto)
     {
@@ -19,6 +19,8 @@ internal class Produto
 
     public void CalcularPagamento()
     {
-        Console.WriteLine(ValorTotal);
+        Console.WriteLine($"Os produtos que voce comprou foi {NomeDoProduto}");
+        Console.WriteLine($"A quantidade de produtos que voce comprou foi de {QuantidadeDoProduto}");
+        Console.WriteLine($"Com isso a sua conta final ficou no valor de {ValorTotal}");
     }
 }

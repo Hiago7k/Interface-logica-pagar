@@ -1,6 +1,6 @@
 ﻿namespace Interface_logica_pagar;
 
-internal class Servico
+internal class Servico : IPagavel
 {
     public Servico(string nomeDoServico, int valorDoServico, int taxaDeServico)
     {

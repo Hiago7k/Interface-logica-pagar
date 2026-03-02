@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+namespace Interface_logica_pagar;
 
-namespace Interface_logica_pagar
+internal interface IPagavel
 {
-    internal interface IPagavel
-    {
-    }
+    public void CalcularPagamento();
 }
