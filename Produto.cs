@@ -8,16 +8,17 @@ internal class Produto
         NomeDoProduto = nomeDoProduto;
         QuantidadeDoProduto = quantidadeDoProduto;
         ValorDoProduto = valorDoProduto;
+        ValorTotal = quantidadeDoProduto += ValorDoProduto;
     }
 
     public string NomeDoProduto { get; set; }
     public int QuantidadeDoProduto { get; set; }
     public int ValorDoProduto { get; set; }
+    public int ValorTotal { get; set; }
 
 
     public void CalcularPagamento()
     {
-      int valorTotal = QuantidadeDoProduto += ValorDoProduto;
-        Console.WriteLine($"O valor total e de {valorTotal}"); 
+        Console.WriteLine(ValorTotal);
     }
 }
