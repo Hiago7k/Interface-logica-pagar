@@ -2,25 +2,30 @@
 
 internal class Servico : IPagavel
 {
-    public Servico(string nomeDoServico, int valorDoServico, int taxaDeServico)
+    public Servico(string nomeDoServico, decimal valorDoServico, decimal quantidadedehoras)
     {
         NomeDoServico = nomeDoServico;
         ValorDoServico = valorDoServico;
-        TaxaDeServico = taxaDeServico;
-        ValorTotal = ValorDoServico += TaxaDeServico;
+        QuantidadeDeHoras = quantidadedehoras;
+
+        // ValorTotal = ValorDoServico += PrecoDasHoras;
+        PrecoDasHoras = 60;
+        
+        ValorTotal = PrecoDasHoras *  QuantidadeDeHoras;
     }
 
     public string NomeDoServico { get; set; }
 
-    public int ValorDoServico { get; set; }
+    public decimal ValorDoServico { get; set; }
 
-    public int TaxaDeServico { get; set; }
-
-    public int ValorTotal { get; set; }
-    // public int QuantidadeDeHoras { get; set; }
+    public decimal PrecoDasHoras { get; set; }
+    public decimal QuantidadeDeHoras { get; set; }
+    public decimal ValorTotal { get; set; }
 
     public void CalcularPagamento()
     {
-        Console.WriteLine(ValorTotal);
+        Console.WriteLine($"O valor total do seu servico foi de {ValorTotal}");
+        Console.WriteLine($"Onde esta incluso as horas do cabeleleiro {PrecoDasHoras}");
+        Console.WriteLine($"E o valor do servico {ValorTotal}");
     }
 }
